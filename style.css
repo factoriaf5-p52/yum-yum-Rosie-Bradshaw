@@ -20,6 +20,39 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+h1, h2, h3, h4 {
+    font-family: 'Intro', sans-serif;
+}
+
+main {
+    padding-top: 2em;
+}
+section {
+    padding-top: 2em;
+}
+
+h1 {
+    color: white;
+}
+
+h2 {
+    color: rgba(250, 115, 68);
+    text-align: center;
+    font-weight: 900;
+}
+
+h3 {
+    font-weight: 900;
+}
+
+p {
+    margin: none;
+}
+
+p.gray-text {
+    color:gray;
+}
+
 small {
     size: 1rem;
     color: gray;
@@ -27,9 +60,15 @@ small {
 
 /* NAVBAR */
 
-#top-nav {
+nav {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo-and-subtitle {
+    display: flex;
+    flex-direction: column;
 }
 
 .nav-bar-icon {
@@ -37,35 +76,123 @@ small {
     height: 1.5rem;
 }
 
-#bottom-nav {
-    font-family: 'Lato', sans-serif;
-    font-size: 15px;
-    color:gray;
+.nav-menu {
+    float: right; 
 }
 
 /* HERO SECTION */
 
+.hero-section {
+    display: flex;
+    flex-direction:column;
+}
+
+.form-icon-and-input-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0.5em;
+    margin: auto;
+}
+
+.hero-form {
+    background-color: white;
+    padding: 1em;
+    border-radius: 5px;
+}
+
 .form-icon {
     height: 1rem;
     width: 1rem;
+    margin-right: 1em;
+}
+
+.green-gradient-background {
+    background-image: linear-gradient(rgba(192, 218, 56, 1), rgba(116, 204, 82, 1));
+    padding: 1em;
+}
+
+
+
+input {
+    border: none;
+}
+
+.find-a-restaurant-button {
+    background-color: rgba(250, 115, 68);
+    border: none;
+    color: white;
+    padding: 2em 3em 2em 3em;
+    border-radius: 5px;
+    margin-top: 1em;
 }
 
 /* HOW IT WORKS SECTION */
 
-.how-it-works-img {
-    height: 8rem;
-    width: 8rem;
+.how-it-works-item {
+    display: flex;
+
 }
 
+.how-it-works-img {
+    height: 5rem;
+    width: 5rem;
+    padding: 1em;
+}
+
+.gray-text {
+
+}
 
 /* DISHES SECTION*/
 
+.dishes-section {
+    background-color: rgba(245, 245, 235);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    width: 300px;
+    background-color: white;
+    margin: auto;
+    margin-bottom: 1em; 
+    border-radius: 4px;
+}
+
+.card-text {
+    padding: 1em;
+}
+
+.buy-now-button {
+    background-color: rgba(95, 176, 56);
+    border: none;
+    border-radius: 5px;
+    color:white;
+    padding: 0.75em 1.75em
+}
+
 .flex-2-columns {
-    display:flex;
+    display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 /* BENEFITS SECTION */
+.benefits-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    color: white;
+    background-image: linear-gradient(rgba(250, 115, 68), rgba(238, 59, 81));
+}
+
+.benefits-item {
+    margin: auto;
+    min-width: 9em;
+    padding: 1em;
+    /* how to center items horizontally??? justify-items: center; */
+}
 .benefits-image {
     height: 2rem;
     width: 2 rem;
