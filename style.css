@@ -18,6 +18,7 @@
 
 body {
     font-family: 'Lato', sans-serif;
+    font-size: 100%;
 }
 
 h1, h2, h3, h4 {
@@ -29,16 +30,19 @@ main {
 }
 section {
     padding-top: 2em;
+    padding-bottom: 2em;
 }
 
 h1 {
     color: white;
+    font-size: 2.5em;
 }
 
 h2 {
     color: rgba(250, 115, 68);
     text-align: center;
     font-weight: 900;
+    font-size: 2.5em;
 }
 
 h3 {
@@ -47,10 +51,12 @@ h3 {
 
 p {
     margin: none;
+    font-weight: 700;
 }
 
 p.gray-text {
     color:gray;
+    font-weight: 400;
 }
 
 small {
@@ -58,12 +64,22 @@ small {
     color: gray;
 }
 
+em {
+    font-style: normal;
+    color: green;
+}
+
+a {
+    text-decoration: none;
+    color: gray;
+}
 /* NAVBAR */
 
 nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 0.75em;
 }
 
 .logo-and-subtitle {
@@ -74,19 +90,44 @@ nav {
 .nav-bar-icon {
     width: 1.5rem;
     height: 1.5rem;
+    filter: invert(62%) sepia(0%) saturate(0%) hue-rotate(20deg) brightness(89%) contrast(86%);
 }
 
-.nav-menu {
-    float: right; 
+#desktop-nav {
+    display: flex;
+    flex-direction: row;
+    
 }
+
+
+@media only screen and (max-width: 600px) {
+    #desktop-nav {
+      display: none;
+    }
+  }
+
+@media only screen and (min-width: 600px) {
+
+    #mobile-nav {
+        display: none;
+    }
+  }
+
 
 /* HERO SECTION */
 
 .hero-section {
     display: flex;
-    flex-direction:column;
+    flex-flow: row wrap;
+    min-width: 100%;
 }
 
+.green-gradient-background {
+    background-image: linear-gradient(rgba(192, 218, 56, 1), rgba(116, 204, 82, 1));
+    padding: 1em;
+    min-width: 50vw; /*no está funcionando*/
+    max-width: 100%; /*no está funcionando*/
+}
 .form-icon-and-input-div {
     display: flex;
     flex-direction: row;
@@ -102,17 +143,11 @@ nav {
 }
 
 .form-icon {
-    height: 1rem;
-    width: 1rem;
+    height: 1.25rem;
+    width: 1.25rem;
     margin-right: 1em;
+    filter: invert(78%) sepia(61%) saturate(5581%) hue-rotate(331deg) brightness(99%) contrast(97%);
 }
-
-.green-gradient-background {
-    background-image: linear-gradient(rgba(192, 218, 56, 1), rgba(116, 204, 82, 1));
-    padding: 1em;
-}
-
-
 
 input {
     border: none;
@@ -131,7 +166,6 @@ input {
 
 .how-it-works-item {
     display: flex;
-
 }
 
 .how-it-works-img {
@@ -140,14 +174,17 @@ input {
     padding: 1em;
 }
 
-.gray-text {
-
-}
 
 /* DISHES SECTION*/
 
-.dishes-section {
+.green-background-section {
     background-color: rgba(245, 245, 235);
+    width: 100%;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
 .card {
@@ -156,8 +193,7 @@ input {
     border-radius: 5px;
     width: 300px;
     background-color: white;
-    margin: auto;
-    margin-bottom: 1em; 
+    margin: 1em;
     border-radius: 4px;
 }
 
@@ -165,7 +201,7 @@ input {
     padding: 1em;
 }
 
-.buy-now-button {
+.green-button {
     background-color: rgba(95, 176, 56);
     border: none;
     border-radius: 5px;
@@ -173,11 +209,24 @@ input {
     padding: 0.75em 1.75em
 }
 
-.flex-2-columns {
+.button-row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 1em;
 }
+
+.rating {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-top-style: solid;
+    border-width: 1px;
+    border-color: lightgray;
+    margin-top: 1em;
+    padding: 1em;
+    align-items: center;
+    }
 
 /* BENEFITS SECTION */
 .benefits-section {
@@ -191,9 +240,58 @@ input {
     margin: auto;
     min-width: 9em;
     padding: 1em;
-    /* how to center items horizontally??? justify-items: center; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    text-align: center;
 }
-.benefits-image {
-    height: 2rem;
-    width: 2 rem;
+
+.circle-white {
+    height: 6em; 
+    width: 6em;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.benefits-icon {
+    height: 3rem;
+    width: 3rem;
+    filter: invert(71%) sepia(66%) saturate(408%) hue-rotate(348deg) brightness(101%) contrast(92%);
+}
+
+/* RESTAURANTS BY CUISINE SECTION */
+
+
+
+/* BANNER SECTION */
+.banner {
+    background-color: rgba(41, 41, 49);
+    border-radius: 5px;
+    margin:1em;
+    padding: 3em;
+}
+
+/* FOOTER SECTION */
+.top-footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+}
+
+.footer-items {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.bottom-footer {
+    padding: 1em;
+}
+
+.footer-row {
+    display: flex;
+    justify-content: space-between;
 }
